@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             WelcomeView()
-            ForEach (0..<4) { num in
+            ForEach (0..<3) { num in
                 ExerciseView(index: num)
             }
         }

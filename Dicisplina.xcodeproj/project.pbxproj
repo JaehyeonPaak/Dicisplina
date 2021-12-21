@@ -14,6 +14,9 @@
 		844B70E82771CDC100262BC6 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70E72771CDC100262BC6 /* ExerciseView.swift */; };
 		844B70EA2771CDD000262BC6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70E92771CDD000262BC6 /* WelcomeView.swift */; };
 		844B70EF2771D3DF00262BC6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70EE2771D3DF00262BC6 /* HeaderView.swift */; };
+		844B70F52771E51E00262BC6 /* forward_lunge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F32771E2BA00262BC6 /* forward_lunge.mp4 */; };
+		844B70F62771E52300262BC6 /* squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F22771E2B000262BC6 /* squats.mp4 */; };
+		844B70F72771E52300262BC6 /* push_up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F12771E2A500262BC6 /* push_up.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		844B70E72771CDC100262BC6 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		844B70E92771CDD000262BC6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		844B70EE2771D3DF00262BC6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		844B70F12771E2A500262BC6 /* push_up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = push_up.mp4; path = ../../../../Downloads/push_up.mp4; sourceTree = "<group>"; };
+		844B70F22771E2B000262BC6 /* squats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = squats.mp4; path = ../../../../Downloads/squats.mp4; sourceTree = "<group>"; };
+		844B70F32771E2BA00262BC6 /* forward_lunge.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = forward_lunge.mp4; path = ../../../../Downloads/forward_lunge.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,9 @@
 		844B70D82771CC2700262BC6 /* Dicisplina */ = {
 			isa = PBXGroup;
 			children = (
-				844B70D92771CC2800262BC6 /* DicisplinaApp.swift */,
+				844B70F02771E23000262BC6 /* Resources */,
 				844B70ED2771CDF000262BC6 /* Views */,
+				844B70D92771CC2800262BC6 /* DicisplinaApp.swift */,
 				844B70DD2771CC2A00262BC6 /* Assets.xcassets */,
 				844B70DF2771CC2A00262BC6 /* Preview Content */,
 			);
@@ -84,6 +91,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		844B70F02771E23000262BC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				844B70F32771E2BA00262BC6 /* forward_lunge.mp4 */,
+				844B70F22771E2B000262BC6 /* squats.mp4 */,
+				844B70F12771E2A500262BC6 /* push_up.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +111,7 @@
 				844B70D22771CC2700262BC6 /* Sources */,
 				844B70D32771CC2700262BC6 /* Frameworks */,
 				844B70D42771CC2700262BC6 /* Resources */,
+				844B70F42771E50B00262BC6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -142,12 +160,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844B70F62771E52300262BC6 /* squats.mp4 in Resources */,
+				844B70F72771E52300262BC6 /* push_up.mp4 in Resources */,
+				844B70F52771E51E00262BC6 /* forward_lunge.mp4 in Resources */,
 				844B70E12771CC2A00262BC6 /* Preview Assets.xcassets in Resources */,
 				844B70DE2771CC2A00262BC6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		844B70F42771E50B00262BC6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		844B70D22771CC2700262BC6 /* Sources */ = {

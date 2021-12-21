@@ -8,8 +8,8 @@
 import SwiftUI
 import AVKit
 
-let exerciseNames = ["Forward Lunge", "Reverse Lunge", "Forearm Plank", "Assisted Pull Up"]
-let videoAddress = ["https://www.youtube.com/watch?v=mUf28ZDa5tg", "https://www.youtube.com/watch?v=tpVhJNQURk4", "https://www.youtube.com/watch?v=bTZmnvtLLFY", "https://www.youtube.com/watch?v=vqqTR2H8DnA"]
+let exerciseNames = ["Squats", "Push Up", "Forward Lunge"]
+let videoNames = ["squats", "push_up", "forward_lunge"]
 
 struct ExerciseView: View {
     
@@ -18,7 +18,13 @@ struct ExerciseView: View {
     var body: some View {
         VStack {
             HeaderView(index: index)
-            VideoPlayer(player: AVPlayer(url: URL(string: videoAddress[index])!))
+            if let url = Bundle.main.url(forResource: videoNames[index], withExtension: ".mp4") {
+                VideoPlayer(player: AVPlayer(url: url))
+            }
+            else {
+                Text("Couldn't find \(videoNames[index]).mp4")
+                    .foregroundColor(.red)
+            }
             Text("Timer")
             Text("Start/Done Button")
             Text("Rating")
