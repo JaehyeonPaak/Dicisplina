@@ -14,7 +14,8 @@ struct HeaderView: View {
     var body: some View {
         VStack {
             Text(exerciseNames[index])
-                .font(.title2)
+                .font(.largeTitle)
+                .fontWeight(.bold)
                 .padding(.bottom)
             HStack {
                 Image(systemName: "1.circle")
