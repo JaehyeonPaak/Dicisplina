@@ -16,19 +16,22 @@ struct ExerciseView: View {
     let index: Int
     
     var body: some View {
-        VStack {
-            HeaderView(index: index)
-            if let url = Bundle.main.url(forResource: videoNames[index], withExtension: ".mp4") {
-                VideoPlayer(player: AVPlayer(url: url))
+        GeometryReader { geo in
+            VStack {
+                HeaderView(index: index)
+                if let url = Bundle.main.url(forResource: videoNames[index], withExtension: ".mp4") {
+                    VideoPlayer(player: AVPlayer(url: url))
+                        .frame(height: geo.size.height*0.45)
+                }
+                else {
+                    Text("Couldn't find \(videoNames[index]).mp4")
+                        .foregroundColor(.red)
+                }
+                Text("Timer")
+                Text("Start/Done Button")
+                Text("Rating")
+                Text("History Button")
             }
-            else {
-                Text("Couldn't find \(videoNames[index]).mp4")
-                    .foregroundColor(.red)
-            }
-            Text("Timer")
-            Text("Start/Done Button")
-            Text("Rating")
-            Text("History Button")
         }
     }
 }
