@@ -14,6 +14,7 @@ let videoNames = ["squats", "push_up", "forward_lunge"]
 struct ExerciseView: View {
     
     let index: Int
+    let interval: TimeInterval = 30
     
     var body: some View {
         GeometryReader { geo in
@@ -28,10 +29,23 @@ struct ExerciseView: View {
                     Text("Couldn't find \(videoNames[index]).mp4")
                         .foregroundColor(.red)
                 }
-                Text("Timer")
-                Text("Start/Done Button")
+                Text(Date().addingTimeInterval(interval), style: .timer)
+                    .font(.largeTitle)
+                    .padding(.vertical)
+                Button {
+                } label: {
+                    Text("Start/Done")
+                        .font(.title2)
+                }
+                .padding(.bottom)
                 Text("Rating")
-                Text("History Button")
+                Spacer()
+                Button {
+                } label: {
+                    Text("History")
+                }
+                .padding(.bottom)
+
             }
         }
     }
