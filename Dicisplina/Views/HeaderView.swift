@@ -13,15 +13,15 @@ struct HeaderView: View {
     
     var body: some View {
         VStack {
-            Text(exerciseNames[index])
+            Text(titleName[index])
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom)
             HStack {
+                Image(systemName: "hand.wave")
                 Image(systemName: "1.circle")
                 Image(systemName: "2.circle")
                 Image(systemName: "3.circle")
-                Image(systemName: "4.circle")
             }
             .padding(.bottom)
         }

@@ -8,8 +8,8 @@
 import SwiftUI
 import AVKit
 
-let exerciseNames = ["Squats", "Push Up", "Forward Lunge"]
-let videoNames = ["squats", "push_up", "forward_lunge"]
+let titleName = ["Squat", "Push Up", "Forward Lunge"]
+let videoNames = ["squat", "push_up", "forward_lunge"]
 
 struct ExerciseView: View {
     
@@ -43,9 +43,9 @@ struct ExerciseView: View {
                 Button {
                 } label: {
                     Text("History")
+                        .font(.title3)
                 }
                 .padding(.bottom)
-
             }
         }
     }
