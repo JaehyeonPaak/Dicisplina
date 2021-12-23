@@ -17,6 +17,7 @@
 		844B70F52771E51E00262BC6 /* forward_lunge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F32771E2BA00262BC6 /* forward_lunge.mp4 */; };
 		844B70F62771E52300262BC6 /* squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F22771E2B000262BC6 /* squats.mp4 */; };
 		844B70F72771E52300262BC6 /* push_up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 844B70F12771E2A500262BC6 /* push_up.mp4 */; };
+		84A4667127741FB200DFDC86 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4667027741FB200DFDC86 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		844B70F12771E2A500262BC6 /* push_up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = push_up.mp4; path = ../../../../Downloads/push_up.mp4; sourceTree = "<group>"; };
 		844B70F22771E2B000262BC6 /* squats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = squats.mp4; path = ../../../../Downloads/squats.mp4; sourceTree = "<group>"; };
 		844B70F32771E2BA00262BC6 /* forward_lunge.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = forward_lunge.mp4; path = ../../../../Downloads/forward_lunge.mp4; sourceTree = "<group>"; };
+		84A4667027741FB200DFDC86 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				844B70E92771CDD000262BC6 /* WelcomeView.swift */,
 				844B70E72771CDC100262BC6 /* ExerciseView.swift */,
 				844B70EE2771D3DF00262BC6 /* HeaderView.swift */,
+				84A4667027741FB200DFDC86 /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				844B70EF2771D3DF00262BC6 /* HeaderView.swift in Sources */,
 				844B70E82771CDC100262BC6 /* ExerciseView.swift in Sources */,
 				844B70DC2771CC2800262BC6 /* ContentView.swift in Sources */,
+				84A4667127741FB200DFDC86 /* RatingView.swift in Sources */,
 				844B70DA2771CC2800262BC6 /* DicisplinaApp.swift in Sources */,
 				844B70EA2771CDD000262BC6 /* WelcomeView.swift in Sources */,
 			);

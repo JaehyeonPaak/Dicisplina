@@ -38,7 +38,7 @@ struct ExerciseView: View {
                         .font(.title2)
                 }
                 .padding(.bottom)
-                Text("Rating")
+                RatingView()
                 Spacer()
                 Button {
                 } label: {
