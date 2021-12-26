@@ -11,16 +11,31 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             HeaderView(titleName: "Welcome")
+            Spacer()
             VStack(alignment: .leading) {
                 Text("Get fit")
                     .font(.system(size: 30))
                     .fontWeight(.bold)
                 Text("with high intensity interval training")
             }
-            Image("sprint.png")
+            .padding(.bottom)
+            Image("sprint")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 240, height: 240)
+                .clipShape(Circle())
+            Spacer()
+            Button {
+            } label: {
+                HStack {
+                    Text("Get Started")
+                    Image(systemName: "arrow.right.circle")
+                }
+                .font(.system(size: 25))
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 25).stroke(.gray, lineWidth: 2))
+            }
+            Spacer()
             Button {
             } label: {
                 Text("History")
