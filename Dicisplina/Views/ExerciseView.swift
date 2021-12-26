@@ -19,7 +19,7 @@ struct ExerciseView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                HeaderView(index: index)
+                HeaderView(titleName: titleName[index])
                     .padding(.top)
                 if let url = Bundle.main.url(forResource: videoNames[index], withExtension: ".mp4") {
                     VideoPlayer(player: AVPlayer(url: url))
@@ -27,6 +27,7 @@ struct ExerciseView: View {
                 }
                 else {
                     Text("Couldn't find \(videoNames[index]).mp4")
+                        .frame(height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
                 Text(Date().addingTimeInterval(interval), style: .timer)

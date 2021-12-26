@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    let index: Int
+    let titleName: String
     
     var body: some View {
         VStack {
-            Text(titleName[index])
+            Text(titleName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom)
@@ -30,6 +30,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(index: 0)
+        HeaderView(titleName: "Welcome")
     }
 }
