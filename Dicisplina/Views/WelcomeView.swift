@@ -11,7 +11,16 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             HeaderView(titleName: "Welcome")
-            Spacer()
+            VStack(alignment: .leading) {
+                Text("Get fit")
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                Text("with high intensity interval training")
+            }
+            Image("sprint.png")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 240, height: 240)
             Button {
             } label: {
                 Text("History")
