@@ -10,6 +10,7 @@ import SwiftUI
 struct SuccessView: View {
     var body: some View {
         VStack {
+            Spacer()
             Image(systemName: "hand.raised.fill")
                 .padding(.bottom, -10.0)
                 .font(.system(size: 60))
@@ -24,6 +25,14 @@ struct SuccessView: View {
                 Text("So eat well and get some rest.")
             }
             .foregroundColor(.gray)
+            Spacer()
+            Button {
+            } label: {
+                Text("Continue")
+                    .font(.system(size: 25))
+            }
+            .padding(.bottom)
+
         }
     }
 }

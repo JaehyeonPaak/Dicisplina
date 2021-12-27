@@ -10,6 +10,8 @@
 		841F72072774D0BD009172EC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F72062774D0BD009172EC /* HistoryView.swift */; };
 		841F72092778CB8B009172EC /* squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 841F72082778CB86009172EC /* squat.mp4 */; };
 		841F720E2778D517009172EC /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F720D2778D517009172EC /* SuccessView.swift */; };
+		841F72192779DDA7009172EC /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F72182779DDA7009172EC /* Exercise.swift */; };
+		841F721C2779E08A009172EC /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F721B2779E08A009172EC /* HistoryStore.swift */; };
 		844B70DA2771CC2800262BC6 /* DicisplinaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70D92771CC2800262BC6 /* DicisplinaApp.swift */; };
 		844B70DC2771CC2800262BC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70DB2771CC2800262BC6 /* ContentView.swift */; };
 		844B70DE2771CC2A00262BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844B70DD2771CC2A00262BC6 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		841F72062774D0BD009172EC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		841F72082778CB86009172EC /* squat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = squat.mp4; path = ../../../../Downloads/squat.mp4; sourceTree = "<group>"; };
 		841F720D2778D517009172EC /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		841F72182779DDA7009172EC /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		841F721B2779E08A009172EC /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		844B70D62771CC2700262BC6 /* Dicisplina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dicisplina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844B70D92771CC2800262BC6 /* DicisplinaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicisplinaApp.swift; sourceTree = "<group>"; };
 		844B70DB2771CC2800262BC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841F721A2779DDF0009172EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				841F72182779DDA7009172EC /* Exercise.swift */,
+				841F721B2779E08A009172EC /* HistoryStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		844B70CD2771CC2700262BC6 = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +82,10 @@
 		844B70D82771CC2700262BC6 /* Dicisplina */ = {
 			isa = PBXGroup;
 			children = (
-				844B70F02771E23000262BC6 /* Resources */,
-				844B70ED2771CDF000262BC6 /* Views */,
 				844B70D92771CC2800262BC6 /* DicisplinaApp.swift */,
+				844B70F02771E23000262BC6 /* Resources */,
+				841F721A2779DDF0009172EC /* Model */,
+				844B70ED2771CDF000262BC6 /* Views */,
 				844B70DD2771CC2A00262BC6 /* Assets.xcassets */,
 				844B70DF2771CC2A00262BC6 /* Preview Content */,
 			);
@@ -206,12 +220,14 @@
 			files = (
 				841F720E2778D517009172EC /* SuccessView.swift in Sources */,
 				841F72072774D0BD009172EC /* HistoryView.swift in Sources */,
+				841F721C2779E08A009172EC /* HistoryStore.swift in Sources */,
 				844B70EF2771D3DF00262BC6 /* HeaderView.swift in Sources */,
 				844B70E82771CDC100262BC6 /* ExerciseView.swift in Sources */,
 				844B70DC2771CC2800262BC6 /* ContentView.swift in Sources */,
 				84A4667127741FB200DFDC86 /* RatingView.swift in Sources */,
 				844B70DA2771CC2800262BC6 /* DicisplinaApp.swift in Sources */,
 				844B70EA2771CDD000262BC6 /* WelcomeView.swift in Sources */,
+				841F72192779DDA7009172EC /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

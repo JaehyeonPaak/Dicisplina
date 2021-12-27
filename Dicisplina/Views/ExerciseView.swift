@@ -8,9 +8,6 @@
 import SwiftUI
 import AVKit
 
-let titleName = ["Squat", "Push Up", "Forward Lunge"]
-let videoNames = ["squat", "push_up", "forward_lunge"]
-
 struct ExerciseView: View {
     
     let index: Int
@@ -19,14 +16,14 @@ struct ExerciseView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                HeaderView(titleName: titleName[index])
+                HeaderView(titleName: Exercise.exercises[index].exerciseName)
                     .padding(.top)
-                if let url = Bundle.main.url(forResource: videoNames[index], withExtension: ".mp4") {
+                if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp4") {
                     VideoPlayer(player: AVPlayer(url: url))
                         .frame(height: geo.size.height*0.45)
                 }
                 else {
-                    Text("Couldn't find \(videoNames[index]).mp4")
+                    Text("Couldn't find \(Exercise.exercises[index].videoName).mp4")
                         .frame(height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
