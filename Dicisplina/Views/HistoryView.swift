@@ -28,8 +28,9 @@ struct HistoryView: View {
                                 Text(exercise)
                             }
                         } header: {
-                            Text(day.date.formatted())
-                                .font(.headline)
+                            Text(day.date.formatted(date: .abbreviated, time: .omitted))
+                                .font(.system(size: 25))
+                                .fontWeight(.bold)
                         }
 
                     }
