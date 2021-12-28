@@ -13,11 +13,13 @@ struct ExerciseView: View {
     let index: Int
     let interval: TimeInterval = 30
     
+    @Binding var selectedTab: Int
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
-                HeaderView(titleName: Exercise.exercises[index].exerciseName)
-                    .padding(.top)
+                HeaderView(titleName: Exercise.exercises[index].exerciseName, selectedTab: $selectedTab)
+                    Spacer()
                 if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp4") {
                     VideoPlayer(player: AVPlayer(url: url))
                         .frame(height: geo.size.height*0.45)
@@ -30,11 +32,17 @@ struct ExerciseView: View {
                 Text(Date().addingTimeInterval(interval), style: .timer)
                     .font(.largeTitle)
                     .padding(.vertical)
-                Button {
-                } label: {
-                    Text("Start/Done")
-                        .font(.title2)
+                HStack(spacing: 80) {
+                    Button {
+                    } label: {
+                        Text("Start")
+                    }
+                    Button {
+                    } label: {
+                        Text("Done")
+                    }
                 }
+                .font(.largeTitle)
                 .padding(.bottom)
                 RatingView()
                 Spacer()
@@ -51,6 +59,6 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(index: 0)
+        ExerciseView(index: 0, selectedTab: .constant(0))
     }
 }

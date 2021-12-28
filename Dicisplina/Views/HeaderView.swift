@@ -11,6 +11,8 @@ struct HeaderView: View {
     
     let titleName: String
     
+    @Binding var selectedTab: Int
+    
     var body: some View {
         VStack {
             Text(titleName)
@@ -18,10 +20,11 @@ struct HeaderView: View {
                 .fontWeight(.bold)
                 .padding(.bottom)
             HStack {
-                Image(systemName: "hand.wave")
-                Image(systemName: "1.circle")
-                Image(systemName: "2.circle")
-                Image(systemName: "3.circle")
+                ForEach(0..<Exercise.exercises.count) { index in
+                    let fill = (selectedTab == index ? ".fill" : "")
+                    Image(systemName: "\(index+1).circle\(fill)")
+                        .font(.system(size: 25))
+                }
             }
             .padding(.bottom)
         }
@@ -30,6 +33,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(titleName: "Welcome")
+        HeaderView(titleName: "Welcome", selectedTab: .constant(0))
     }
 }

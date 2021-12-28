@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @Binding var selectedTab: Int
+    
     var body: some View {
         VStack {
-            HeaderView(titleName: "Welcome")
+            HeaderView(titleName: "Welcome", selectedTab: $selectedTab)
             Spacer()
             VStack(alignment: .leading) {
                 Text("Get fit")
@@ -26,6 +29,7 @@ struct WelcomeView: View {
                 .clipShape(Circle())
             Spacer()
             Button {
+                selectedTab = 0
             } label: {
                 HStack {
                     Text("Get Started")
@@ -48,6 +52,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(selectedTab: .constant(9))
     }
 }
