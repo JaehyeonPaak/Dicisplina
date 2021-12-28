@@ -15,6 +15,10 @@ struct ExerciseView: View {
     
     @Binding var selectedTab: Int
     
+    var lastExercise: Bool {
+        index + 1 == Exercise.exercises.count
+    }
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -38,6 +42,7 @@ struct ExerciseView: View {
                         Text("Start")
                     }
                     Button {
+                        selectedTab = lastExercise ? 9 : selectedTab + 1
                     } label: {
                         Text("Done")
                     }
