@@ -15,6 +15,8 @@ struct ExerciseView: View {
     
     @Binding var selectedTab: Int
     
+    @State private var rating: Int = 0
+    
     var lastExercise: Bool {
         index + 1 == Exercise.exercises.count
     }
@@ -47,9 +49,10 @@ struct ExerciseView: View {
                         Text("Done")
                     }
                 }
+                .foregroundColor(.black)
                 .font(.largeTitle)
                 .padding(.bottom)
-                RatingView()
+                RatingView(rating: $rating)
                 Spacer()
                 Button {
                 } label: {
