@@ -23,6 +23,8 @@ struct ExerciseView: View {
     
     @State private var showHistory = false
     
+    @State private var showSuccess = false
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -46,9 +48,17 @@ struct ExerciseView: View {
                         Text("Start")
                     }
                     Button {
-                        selectedTab = lastExercise ? 9 : selectedTab + 1
+                        if lastExercise {
+                            showSuccess.toggle()
+                        }
+                        else {
+                            selectedTab += 1
+                        }
                     } label: {
                         Text("Done")
+                    }
+                    .sheet(isPresented: $showSuccess) {
+                        SuccessView()
                     }
                 }
                 .foregroundColor(.black)
