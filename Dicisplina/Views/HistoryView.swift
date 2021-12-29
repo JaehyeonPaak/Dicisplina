@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct HistoryView: View {
+    
+    @Binding var showHistory: Bool
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Button {
+                showHistory.toggle()
             } label: {
                 Image(systemName: "xmark.circle")
                     .padding(.trailing)
                     .font(.system(size: 25))
                     .foregroundColor(.gray)
             }
+            .padding(.top)
             VStack {
                 Text("History")
                     .font(.title)
                     .fontWeight(.bold)
+                    .padding(.top)
                 Form {
                     ForEach(HistoryStore().exerciseDays) { day in
                         Section {
@@ -43,6 +49,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView(showHistory: .constant(true))
     }
 }

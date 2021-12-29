@@ -21,6 +21,8 @@ struct ExerciseView: View {
         index + 1 == Exercise.exercises.count
     }
     
+    @State private var showHistory = false
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -55,10 +57,14 @@ struct ExerciseView: View {
                 RatingView(rating: $rating)
                 Spacer()
                 Button {
+                    showHistory.toggle()
                 } label: {
                     Text("History")
                         .font(.title3)
                 }
+                .sheet(isPresented: $showHistory, content: {
+                    HistoryView(showHistory: $showHistory)
+                })
                 .padding(.bottom)
             }
         }
@@ -68,5 +74,6 @@ struct ExerciseView: View {
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseView(index: 0, selectedTab: .constant(0))
+.previewInterfaceOrientation(.portrait)
     }
 }
