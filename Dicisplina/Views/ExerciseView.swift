@@ -58,7 +58,7 @@ struct ExerciseView: View {
                         Text("Done")
                     }
                     .sheet(isPresented: $showSuccess) {
-                        SuccessView()
+                        SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab)
                     }
                 }
                 .foregroundColor(.black)

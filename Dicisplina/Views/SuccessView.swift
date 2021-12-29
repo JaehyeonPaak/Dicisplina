@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct SuccessView: View {
+    
+    @Binding var showSuccess: Bool
+    
+    @Binding var selectedTab: Int
+    
     var body: some View {
         VStack {
             Spacer()
@@ -27,6 +32,8 @@ struct SuccessView: View {
             .foregroundColor(.gray)
             Spacer()
             Button {
+                showSuccess.toggle()
+                selectedTab = 9
             } label: {
                 Text("Continue")
                     .font(.system(size: 25))
@@ -39,6 +46,6 @@ struct SuccessView: View {
 
 struct SuccessView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessView()
+        SuccessView(showSuccess: .constant(true) ,selectedTab: .constant(0))
     }
 }
