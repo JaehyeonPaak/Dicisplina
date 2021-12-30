@@ -29,6 +29,7 @@ struct SuccessView: View {
                 Text("Remember tomorrow's another day.")
                 Text("So eat well and get some rest.")
             }
+            .font(.system(size: 20))
             .foregroundColor(.gray)
             Spacer()
             Button {
