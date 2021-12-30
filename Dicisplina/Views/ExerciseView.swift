@@ -40,9 +40,6 @@ struct ExerciseView: View {
                         .frame(height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
-                if showTimer {
-                    TimerView(timerDone: $timerDone)
-                }
                 HStack(spacing: 80) {
                     Button {
                         showTimer.toggle()
@@ -61,6 +58,7 @@ struct ExerciseView: View {
                     } label: {
                         Text("Done")
                     }
+                    .disabled(!timerDone)
                     .sheet(isPresented: $showSuccess) {
                         SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab)
                     }
@@ -68,6 +66,10 @@ struct ExerciseView: View {
                 .foregroundColor(.black)
                 .font(.largeTitle)
                 .padding(.bottom)
+                if showTimer {
+                    TimerView(timerDone: $timerDone)
+                }
+                Spacer()
                 RatingView(rating: $rating)
                 Spacer()
                 Button {
