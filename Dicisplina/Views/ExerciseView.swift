@@ -30,7 +30,7 @@ struct ExerciseView: View {
         GeometryReader { geo in
             VStack {
                 HeaderView(titleName: Exercise.exercises[index].exerciseName, selectedTab: $selectedTab)
-                    Spacer()
+                    .padding(.bottom)
                 if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp4") {
                     VideoPlayer(player: AVPlayer(url: url))
                         .frame(height: geo.size.height*0.45)
@@ -71,7 +71,7 @@ struct ExerciseView: View {
                 }
                 Spacer()
                 RatingView(rating: $rating)
-                Spacer()
+                    .padding(.bottom)
                 Button {
                     showHistory.toggle()
                 } label: {
