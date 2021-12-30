@@ -63,7 +63,6 @@ struct ExerciseView: View {
                         SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab)
                     }
                 }
-                .foregroundColor(.black)
                 .font(.largeTitle)
                 .padding(.bottom)
                 if showTimer {

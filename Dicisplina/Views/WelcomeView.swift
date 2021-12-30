@@ -36,7 +36,6 @@ struct WelcomeView: View {
                         .fontWeight(.bold)
                     Image(systemName: "arrow.right.circle")
                 }
-                .foregroundColor(.black)
                 .font(.system(size: 25))
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 25).stroke(.gray, lineWidth: 2))
