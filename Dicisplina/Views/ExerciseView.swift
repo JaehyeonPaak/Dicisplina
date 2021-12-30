@@ -31,13 +31,13 @@ struct ExerciseView: View {
             VStack {
                 HeaderView(titleName: Exercise.exercises[index].exerciseName, selectedTab: $selectedTab)
                     .padding(.bottom)
-                if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp4") {
+                if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp") {
                     VideoPlayer(player: AVPlayer(url: url))
                         .frame(height: geo.size.height*0.45)
                 }
                 else {
                     Text("Couldn't find \(Exercise.exercises[index].videoName).mp4")
-                        .frame(height: geo.size.height*0.45)
+                        .frame(width: geo.size.width*1, height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
                 HStack(spacing: 80) {
