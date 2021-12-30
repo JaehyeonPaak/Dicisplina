@@ -11,7 +11,6 @@ import AVKit
 struct ExerciseView: View {
     
     let index: Int
-    let interval: TimeInterval = 30
     
     @Binding var selectedTab: Int
     
@@ -22,8 +21,10 @@ struct ExerciseView: View {
     }
     
     @State private var showHistory = false
-    
     @State private var showSuccess = false
+    
+    @State private var showTimer = false
+    @State private var timerDone = false
     
     var body: some View {
         GeometryReader { geo in
@@ -39,11 +40,12 @@ struct ExerciseView: View {
                         .frame(height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
-                Text(Date().addingTimeInterval(interval), style: .timer)
-                    .font(.largeTitle)
-                    .padding(.vertical)
+                if showTimer {
+                    TimerView(timerDone: $timerDone)
+                }
                 HStack(spacing: 80) {
                     Button {
+                        showTimer.toggle()
                     } label: {
                         Text("Start")
                     }
@@ -54,6 +56,8 @@ struct ExerciseView: View {
                         else {
                             selectedTab += 1
                         }
+                        showTimer.toggle()
+                        timerDone.toggle()
                     } label: {
                         Text("Done")
                     }

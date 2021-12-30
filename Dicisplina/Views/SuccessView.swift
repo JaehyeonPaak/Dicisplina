@@ -32,7 +32,7 @@ struct SuccessView: View {
             .foregroundColor(.gray)
             Spacer()
             Button {
-                showSuccess.toggle()
+                showSuccess = false
                 selectedTab = 9
             } label: {
                 Text("Continue")
