@@ -49,6 +49,7 @@ struct ExerciseView: View {
                     Button {
                         if lastExercise {
                             showSuccess.toggle()
+                            showTimer = false
                         }
                         else {
                             selectedTab += 1
