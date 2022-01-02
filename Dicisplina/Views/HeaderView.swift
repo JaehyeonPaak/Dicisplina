@@ -20,10 +20,15 @@ struct HeaderView: View {
                 .fontWeight(.bold)
                 .padding(.bottom)
             HStack {
-                ForEach(0..<Exercise.exercises.count) { index in
-                    let fill = (selectedTab == index ? ".fill" : "")
-                    Image(systemName: "\(index+1).circle\(fill)")
-                        .font(.system(size: 25))
+                ForEach(1..<Exercise.exercises.count+1) { index in
+                    let fill = (selectedTab == index-1 ? ".fill" : "")
+                    Button {
+                        selectedTab = index - 1
+                    } label: {
+                        Image(systemName: "\(index).circle\(fill)")
+                            .font(.system(size: 25))
+                    }
+
                 }
             }
             .padding(.bottom)
