@@ -19,6 +19,11 @@
 		844B70EA2771CDD000262BC6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70E92771CDD000262BC6 /* WelcomeView.swift */; };
 		844B70EF2771D3DF00262BC6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B70EE2771D3DF00262BC6 /* HeaderView.swift */; };
 		8453AA74277D838900FA8302 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453AA73277D838800FA8302 /* TimerView.swift */; };
+		848060C2278176D5001DC1B1 /* Bicycle_Crunch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848060C1278176C2001DC1B1 /* Bicycle_Crunch.mp4 */; };
+		848060C3278176D5001DC1B1 /* Jumping_Jacks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848060BE278176C2001DC1B1 /* Jumping_Jacks.mp4 */; };
+		848060C4278176D5001DC1B1 /* Mountain_Climber.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848060BD278176C1001DC1B1 /* Mountain_Climber.mp4 */; };
+		848060C5278176D5001DC1B1 /* Squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848060C0278176C2001DC1B1 /* Squat.mp4 */; };
+		848060C6278176D5001DC1B1 /* Superman.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848060BF278176C2001DC1B1 /* Superman.mp4 */; };
 		84A4667127741FB200DFDC86 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4667027741FB200DFDC86 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,11 @@
 		844B70E92771CDD000262BC6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		844B70EE2771D3DF00262BC6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8453AA73277D838800FA8302 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		848060BD278176C1001DC1B1 /* Mountain_Climber.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountain_Climber.mp4; path = ../../../../Downloads/Mountain_Climber.mp4; sourceTree = "<group>"; };
+		848060BE278176C2001DC1B1 /* Jumping_Jacks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Jumping_Jacks.mp4; path = ../../../../Downloads/Jumping_Jacks.mp4; sourceTree = "<group>"; };
+		848060BF278176C2001DC1B1 /* Superman.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Superman.mp4; path = ../../../../Downloads/Superman.mp4; sourceTree = "<group>"; };
+		848060C0278176C2001DC1B1 /* Squat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Squat.mp4; path = ../../../../Downloads/Squat.mp4; sourceTree = "<group>"; };
+		848060C1278176C2001DC1B1 /* Bicycle_Crunch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bicycle_Crunch.mp4; path = ../../../../Downloads/Bicycle_Crunch.mp4; sourceTree = "<group>"; };
 		84A4667027741FB200DFDC86 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +124,11 @@
 		844B70F02771E23000262BC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				848060C1278176C2001DC1B1 /* Bicycle_Crunch.mp4 */,
+				848060BE278176C2001DC1B1 /* Jumping_Jacks.mp4 */,
+				848060BD278176C1001DC1B1 /* Mountain_Climber.mp4 */,
+				848060C0278176C2001DC1B1 /* Squat.mp4 */,
+				848060BF278176C2001DC1B1 /* Superman.mp4 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -177,6 +192,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848060C2278176D5001DC1B1 /* Bicycle_Crunch.mp4 in Resources */,
+				848060C3278176D5001DC1B1 /* Jumping_Jacks.mp4 in Resources */,
+				848060C4278176D5001DC1B1 /* Mountain_Climber.mp4 in Resources */,
+				848060C5278176D5001DC1B1 /* Squat.mp4 in Resources */,
+				848060C6278176D5001DC1B1 /* Superman.mp4 in Resources */,
 				844B70E12771CC2A00262BC6 /* Preview Assets.xcassets in Resources */,
 				844B70DE2771CC2A00262BC6 /* Assets.xcassets in Resources */,
 			);

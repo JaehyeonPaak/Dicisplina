@@ -12,16 +12,20 @@ struct Exercise {
     let exerciseName: String
     
     enum ExerciseEnum: String {
+        case jumpingJacks = "Jumping Jacks"
         case squat = "Squat"
-        case pushUp = "Push Up"
-        case forwardLunge = "Forward Lunge"
+        case mountainClimber = "Mountain Climber"
+        case bicycleCrunch = "Bicycle Crunch"
+        case superman = "Superman"
     }
 }
 
 extension Exercise {
     static let exercises = [
-        Exercise(videoName: "squat", exerciseName: ExerciseEnum.squat.rawValue),
-        Exercise(videoName: "push_up", exerciseName: ExerciseEnum.pushUp.rawValue),
-        Exercise(videoName: "forward_lunge", exerciseName: ExerciseEnum.forwardLunge.rawValue)
+        Exercise(videoName: "Jumping_Jacks", exerciseName: ExerciseEnum.jumpingJacks.rawValue),
+        Exercise(videoName: "Squat", exerciseName: ExerciseEnum.squat.rawValue),
+        Exercise(videoName: "Mountain_Climber", exerciseName: ExerciseEnum.mountainClimber.rawValue),
+        Exercise(videoName: "Bicycle_Crunch", exerciseName: ExerciseEnum.bicycleCrunch.rawValue),
+        Exercise(videoName: "Superman", exerciseName: ExerciseEnum.superman.rawValue)
     ]
 }

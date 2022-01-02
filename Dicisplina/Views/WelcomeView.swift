@@ -13,11 +13,11 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             VStack(alignment: .leading) {
                 Text("Get fit")
                     .font(.system(size: 30))
                     .fontWeight(.bold)
+                    .padding(.top)
                 Text("with high intensity interval training")
             }
             .padding(.bottom)

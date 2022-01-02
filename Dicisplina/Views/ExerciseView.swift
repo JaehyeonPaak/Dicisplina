@@ -31,7 +31,7 @@ struct ExerciseView: View {
             VStack {
                 HeaderView(titleName: Exercise.exercises[index].exerciseName, selectedTab: $selectedTab)
                     .padding(.bottom)
-                if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp") {
+                if let url = Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: ".mp4") {
                     VideoPlayer(player: AVPlayer(url: url))
                         .frame(height: geo.size.height*0.45)
                 }
@@ -40,12 +40,15 @@ struct ExerciseView: View {
                         .frame(width: geo.size.width*1, height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
+                
                 HStack(spacing: 80) {
+                    
                     Button {
                         showTimer.toggle()
                     } label: {
                         Text("Start")
                     }
+                    
                     Button {
                         if lastExercise {
                             showSuccess.toggle()
@@ -66,6 +69,7 @@ struct ExerciseView: View {
                 }
                 .font(.largeTitle)
                 .padding(.bottom)
+                
                 if showTimer {
                     TimerView(timerDone: $timerDone)
                 }
