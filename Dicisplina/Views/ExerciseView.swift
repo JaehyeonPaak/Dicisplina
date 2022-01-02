@@ -44,7 +44,7 @@ struct ExerciseView: View {
                 HStack(spacing: 80) {
                     
                     Button {
-                        showTimer.toggle()
+                        showTimer = true
                     } label: {
                         Text("Start")
                     }
@@ -64,7 +64,7 @@ struct ExerciseView: View {
                     }
                     .disabled(!timerDone)
                     .sheet(isPresented: $showSuccess) {
-                        SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab)
+                        SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab, showTimer: $showTimer)
                     }
                 }
                 .font(.largeTitle)

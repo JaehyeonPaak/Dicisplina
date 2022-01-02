@@ -10,8 +10,8 @@ import SwiftUI
 struct SuccessView: View {
     
     @Binding var showSuccess: Bool
-    
     @Binding var selectedTab: Int
+    @Binding var showTimer: Bool
     
     var body: some View {
         VStack {
@@ -35,6 +35,7 @@ struct SuccessView: View {
             Button {
                 showSuccess = false
                 selectedTab = 9
+                showTimer = false
             } label: {
                 Text("Continue")
                     .font(.system(size: 25))
@@ -47,6 +48,6 @@ struct SuccessView: View {
 
 struct SuccessView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessView(showSuccess: .constant(true) ,selectedTab: .constant(0))
+        SuccessView(showSuccess: .constant(true) ,selectedTab: .constant(0), showTimer: .constant(false))
     }
 }
