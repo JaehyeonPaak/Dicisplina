@@ -25,7 +25,7 @@ struct SuccessView: View {
                 .fontWeight(.bold)
                 .padding(.bottom)
             VStack {
-                Text("Good job completing all three exercises!")
+                Text("Good job completing the exercises!")
                 Text("Remember tomorrow's another day.")
                 Text("So eat well and get some rest.")
             }
