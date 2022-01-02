@@ -13,7 +13,6 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            HeaderView(titleName: "Welcome", selectedTab: $selectedTab)
             Spacer()
             VStack(alignment: .leading) {
                 Text("Get fit")
