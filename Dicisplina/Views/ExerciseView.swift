@@ -99,6 +99,5 @@ struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseView(index: 0, selectedTab: .constant(0))
             .environmentObject(HistoryStore())
-.previewInterfaceOrientation(.portrait)
     }
 }
