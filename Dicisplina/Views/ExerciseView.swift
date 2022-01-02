@@ -26,6 +26,8 @@ struct ExerciseView: View {
     @State private var showTimer = false
     @State private var timerDone = false
     
+    @EnvironmentObject var history: HistoryStore
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -59,6 +61,7 @@ struct ExerciseView: View {
                         }
                         showTimer.toggle()
                         timerDone.toggle()
+                        history.addDoneExercise(Exercise.exercises[index].exerciseName)
                     } label: {
                         Text("Done")
                     }
@@ -76,6 +79,7 @@ struct ExerciseView: View {
                 Spacer()
                 RatingView(rating: $rating)
                     .padding(.bottom)
+                
                 Button {
                     showHistory.toggle()
                 } label: {
@@ -94,6 +98,7 @@ struct ExerciseView: View {
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseView(index: 0, selectedTab: .constant(0))
+            .environmentObject(HistoryStore())
 .previewInterfaceOrientation(.portrait)
     }
 }
