@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     
     @Binding var selectedTab: Int
+    @Binding var showHistory: Bool
     
     var body: some View {
         VStack {
@@ -41,10 +42,14 @@ struct WelcomeView: View {
             }
             Spacer()
             Button {
+                showHistory.toggle()
             } label: {
                 Text("History")
                     .font(.title3)
             }
+            .sheet(isPresented: $showHistory, content: {
+                HistoryView(showHistory: $showHistory)
+            })
             .padding(.bottom)
         }
     }
@@ -52,6 +57,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(selectedTab: .constant(9))
+        WelcomeView(selectedTab: .constant(9), showHistory: .constant(false))
     }
 }

@@ -20,7 +20,7 @@ struct ExerciseView: View {
         index + 1 == Exercise.exercises.count
     }
     
-    @State private var showHistory = false
+    @Binding var showHistory: Bool
     @State private var showSuccess = false
     
     @State private var showTimer = false
@@ -97,7 +97,7 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(index: 0, selectedTab: .constant(0))
+        ExerciseView(index: 0, selectedTab: .constant(0), showHistory: .constant(false))
             .environmentObject(HistoryStore())
     }
 }
