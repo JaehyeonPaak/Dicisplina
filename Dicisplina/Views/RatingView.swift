@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RatingView: View {
     
-    @AppStorage("ratings") private var ratings = "30000"
+    @AppStorage("ratings") private var ratings = "00000"
     @State private var rating: Int = 0
     let exerciseIndex: Int
     
@@ -18,7 +18,7 @@ struct RatingView: View {
     
     var body: some View {
         HStack {
-            ForEach(1..<Exercise.exercises.count + 1) { index in
+            ForEach(0..<Exercise.exercises.count) { index in
                 Image(systemName: "flame")
                     .onAppear {
                         let character = ratings[ratings.index(ratings.startIndex, offsetBy: exerciseIndex)]

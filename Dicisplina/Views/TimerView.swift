@@ -23,7 +23,6 @@ struct TimerView: View {
                 }
                 else {
                     timerDone = true
-                    
                 }
             }
     }

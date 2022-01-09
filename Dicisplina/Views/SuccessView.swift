@@ -12,6 +12,7 @@ struct SuccessView: View {
     @Binding var showSuccess: Bool
     @Binding var selectedTab: Int
     @Binding var showTimer: Bool
+    @Binding var timerDone: Bool
     
     var body: some View {
         VStack {
@@ -36,6 +37,7 @@ struct SuccessView: View {
                 showSuccess = false
                 selectedTab = 9
                 showTimer = false
+                timerDone = false
             } label: {
                 Text("Continue")
                     .font(.system(size: 25))
@@ -48,6 +50,6 @@ struct SuccessView: View {
 
 struct SuccessView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessView(showSuccess: .constant(true) ,selectedTab: .constant(0), showTimer: .constant(false))
+        SuccessView(showSuccess: .constant(true) ,selectedTab: .constant(0), showTimer: .constant(false), timerDone: .constant(false))
     }
 }

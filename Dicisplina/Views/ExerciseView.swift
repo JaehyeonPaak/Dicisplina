@@ -40,37 +40,34 @@ struct ExerciseView: View {
                         .frame(width: geo.size.width*1, height: geo.size.height*0.45)
                         .foregroundColor(.red)
                 }
-                
                 HStack(spacing: 80) {
-                    
                     Button {
                         showTimer = true
                     } label: {
                         Text("Start")
                     }
-                    
                     Button {
                         if lastExercise {
                             showSuccess.toggle()
                             showTimer = false
+                            timerDone.toggle()
                         }
                         else {
                             selectedTab += 1
                         }
                         showTimer = false
-                        timerDone.toggle()
+                        timerDone = true
                         history.addDoneExercise(Exercise.exercises[index].exerciseName)
                     } label: {
                         Text("Done")
                     }
                     .disabled(!timerDone)
                     .sheet(isPresented: $showSuccess) {
-                        SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab, showTimer: $showTimer)
+                        SuccessView(showSuccess: $showSuccess ,selectedTab: $selectedTab, showTimer: $showTimer, timerDone: $timerDone)
                     }
                 }
                 .font(.largeTitle)
                 .padding(.bottom)
-                
                 if showTimer {
                     TimerView(timerDone: $timerDone)
                 }
