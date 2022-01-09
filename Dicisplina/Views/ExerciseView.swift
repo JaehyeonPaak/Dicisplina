@@ -14,8 +14,6 @@ struct ExerciseView: View {
     
     @Binding var selectedTab: Int
     
-    @State private var rating: Int = 0
-    
     var lastExercise: Bool {
         index + 1 == Exercise.exercises.count
     }
@@ -77,7 +75,7 @@ struct ExerciseView: View {
                     TimerView(timerDone: $timerDone)
                 }
                 Spacer()
-                RatingView(rating: $rating)
+                RatingView(exerciseIndex: index)
                     .padding(.bottom)
                 
                 Button {
