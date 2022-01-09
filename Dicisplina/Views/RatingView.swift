@@ -35,6 +35,8 @@ struct RatingView: View {
     
     func updateRating(index: Int) {
         rating = index
+        let index = ratings.index(ratings.startIndex, offsetBy: exerciseIndex)
+        ratings.replaceSubrange(index...index, with: String(rating))
     }
 }
 

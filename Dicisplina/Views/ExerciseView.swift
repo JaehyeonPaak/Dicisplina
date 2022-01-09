@@ -57,7 +57,7 @@ struct ExerciseView: View {
                         else {
                             selectedTab += 1
                         }
-                        showTimer.toggle()
+                        showTimer = false
                         timerDone.toggle()
                         history.addDoneExercise(Exercise.exercises[index].exerciseName)
                     } label: {
