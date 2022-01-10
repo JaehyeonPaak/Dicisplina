@@ -39,7 +39,6 @@ struct HistoryView: View {
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
                         }
-
                     }
                 }
             }
