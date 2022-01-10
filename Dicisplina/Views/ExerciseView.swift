@@ -47,16 +47,14 @@ struct ExerciseView: View {
                         Text("Start")
                     }
                     Button {
+                        showTimer = false
+                        timerDone = false
                         if lastExercise {
                             showSuccess.toggle()
-                            showTimer = false
-                            timerDone.toggle()
                         }
                         else {
                             selectedTab += 1
                         }
-                        showTimer = false
-                        timerDone = true
                         history.addDoneExercise(Exercise.exercises[index].exerciseName)
                     } label: {
                         Text("Done")
