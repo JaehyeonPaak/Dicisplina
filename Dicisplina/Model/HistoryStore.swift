@@ -37,5 +37,11 @@ class HistoryStore: ObservableObject {
             return false
         }
     }
+    
+    enum FileError: Error {
+        case loadFailure
+        case saveFailure
+        case urlFailure
+    }
 }
 
