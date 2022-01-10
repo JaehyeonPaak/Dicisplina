@@ -9,12 +9,20 @@ import SwiftUI
 
 struct RatingView: View {
     
-    @AppStorage("ratings") private var ratings = "00000"
+    @AppStorage("ratings") private var ratings = ""
     @State private var rating: Int = 0
     let exerciseIndex: Int
     
     let onColor = Color.red
     let offColor = Color.gray
+    
+    init(exerciseIndex: Int) {
+        self.exerciseIndex = exerciseIndex
+        let desiredLength = Exercise.exercises.count
+        if ratings.count < desiredLength {
+            ratings = ratings.padding(toLength: desiredLength, withPad: "0", startingAt: 0)
+        }
+    }
     
     var body: some View {
         HStack {
