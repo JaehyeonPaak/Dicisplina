@@ -42,13 +42,13 @@ struct ExerciseView: View {
                 }
                 HStack(spacing: 80) {
                     Button {
-                        showTimer = true
+                        showTimer.toggle()
                     } label: {
                         Text("Start")
                     }
                     Button {
-                        showTimer = false
-                        timerDone = false
+                        showTimer.toggle()
+                        timerDone.toggle()
                         if lastExercise {
                             showSuccess.toggle()
                         }
