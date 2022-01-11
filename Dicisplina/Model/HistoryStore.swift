@@ -1,10 +1,10 @@
+
 //
 //  HistoryStore.swift
 //  Dicisplina
 //
 //  Created by United States on 12/27/21.
 //
-
 import Foundation
 
 struct ExerciseDay: Identifiable {
@@ -59,4 +59,3 @@ class HistoryStore: ObservableObject {
         throw FileError.loadFailure
     }
 }
-
