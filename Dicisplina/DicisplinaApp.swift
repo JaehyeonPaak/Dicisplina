@@ -11,6 +11,7 @@ import SwiftUI
 struct DicisplinaApp: App {
     
     @StateObject private var historyStore: HistoryStore
+    @State private var showAlert = false
     
     init() {
         let historyStore: HistoryStore
@@ -20,6 +21,7 @@ struct DicisplinaApp: App {
         catch {
             print("Couldn't load history data.")
             historyStore = HistoryStore()
+            showAlert = true
         }
         _historyStore = StateObject(wrappedValue: historyStore)
     }
@@ -27,6 +29,9 @@ struct DicisplinaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("History"), message: Text("Cannot load past history\n Email support:\n wogus392@gmail.com"))
+                }
                 .environmentObject(historyStore)
                 .onAppear {
                     print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
