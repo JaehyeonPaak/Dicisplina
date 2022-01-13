@@ -58,4 +58,11 @@ class HistoryStore: ObservableObject {
     func load() throws {
         throw FileError.loadFailure
     }
+    
+    func getURL() -> URL? {
+        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        return documentsURL
+    }
 }
