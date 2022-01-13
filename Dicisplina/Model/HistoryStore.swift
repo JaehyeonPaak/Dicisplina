@@ -63,6 +63,6 @@ class HistoryStore: ObservableObject {
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
-        return documentsURL
+        return documentsURL.appendingPathComponent("history.plist")
     }
 }
