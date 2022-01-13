@@ -65,4 +65,20 @@ class HistoryStore: ObservableObject {
         }
         return documentsURL.appendingPathComponent("history.plist")
     }
+    
+    func save() throws {
+        guard let dataURL = getURL() else {
+            throw FileError.urlFailure
+        }
+        var plishData: [[Any]] = []
+        for exerciseDay in exerciseDays {
+            plishData.append([exerciseDay.id, exerciseDay.date, exerciseDay.exercises])
+        }
+        do {
+            let data = try PropertyListSerialization.data(fromPropertyList: plishData, format: .binary, options: .zero)
+            try data.write(to: dataURL, options: .atomic)
+        } catch {
+            throw FileError.saveFailure
+        }
+    }
 }
