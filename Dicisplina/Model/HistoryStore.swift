@@ -38,6 +38,11 @@ class HistoryStore: ObservableObject {
             exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
         }
         print("History: ", exerciseDays)
+        do {
+            try save()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
     
     func isSameDay(date1: Date, date2: Date) -> Bool {
