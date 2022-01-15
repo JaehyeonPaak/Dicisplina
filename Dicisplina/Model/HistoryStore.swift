@@ -84,12 +84,12 @@ class HistoryStore: ObservableObject {
         guard let dataURL = getURL() else {
             throw FileError.urlFailure
         }
-        let result: (ExerciseDay) -> [Any] = { exerciseDay in
-            [exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises]
+        var plistData: [[Any]] = []
+        for exerciseDay in exerciseDays {
+            plistData.append([exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises])
         }
-        let plishData: [[Any]] = exerciseDays.map(result)
         do {
-            let data = try PropertyListSerialization.data(fromPropertyList: plishData, format: .binary, options: .zero)
+            let data = try PropertyListSerialization.data(fromPropertyList: plistData, format: .binary, options: .zero)
             try data.write(to: dataURL, options: .atomic)
         } catch {
             throw FileError.saveFailure
