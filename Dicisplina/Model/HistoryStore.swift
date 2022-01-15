@@ -61,7 +61,16 @@ class HistoryStore: ObservableObject {
     }
     
     func load() throws {
-        throw FileError.loadFailure
+        guard let dataURL = getURL() else {
+            throw FileError.urlFailure
+        }
+        do {
+            let data = try Data(contentsOf: dataURL)
+            let plistData = try PropertyListSerialization.propertyList(from: data, options: [], format: nil)
+            let convertedPlistData = plistData as? [Any] ?? []
+        } catch {
+            throw FileError.loadFailure
+        }
     }
     
     func getURL() -> URL? {
@@ -75,10 +84,10 @@ class HistoryStore: ObservableObject {
         guard let dataURL = getURL() else {
             throw FileError.urlFailure
         }
-        var plishData: [[Any]] = []
-        for exerciseDay in exerciseDays {
-            plishData.append([exerciseDay.id, exerciseDay.date, exerciseDay.exercises])
+        let result: (ExerciseDay) -> [Any] = { exerciseDay in
+            [exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises]
         }
+        let plishData: [[Any]] = exerciseDays.map(result)
         do {
             let data = try PropertyListSerialization.data(fromPropertyList: plishData, format: .binary, options: .zero)
             try data.write(to: dataURL, options: .atomic)
