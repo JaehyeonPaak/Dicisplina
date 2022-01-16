@@ -67,7 +67,10 @@ class HistoryStore: ObservableObject {
         do {
             let data = try Data(contentsOf: dataURL)
             let plistData = try PropertyListSerialization.propertyList(from: data, options: [], format: nil)
-            let convertedPlistData = plistData as? [Any] ?? []
+            let convertedPlistData = plistData as? [[Any]] ?? []
+            for convertedPlistDatum in convertedPlistData {
+                exerciseDays.append(ExerciseDay(date: convertedPlistDatum[1] as? Date ?? Date(), exercises: convertedPlistDatum[2] as? [String] ?? []))
+            }
         } catch {
             throw FileError.loadFailure
         }
